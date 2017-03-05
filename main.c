@@ -60,6 +60,13 @@ int main(int argc, char *argv[])
         i = 0;
         e = append(line, e);
     }
+
+#ifdef OPT
+    e = pHead;
+    while ((e->pNext) != NULL) {
+        e = attachData(e);
+    }
+#endif
     clock_gettime(CLOCK_REALTIME, &end);
     cpu_time1 = diff_in_second(start, end);
 

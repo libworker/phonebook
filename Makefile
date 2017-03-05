@@ -37,6 +37,15 @@ cache-test: $(EXEC)
 		-e cache-misses,cache-references,instructions,cycles \
 		./phonebook_opt
 
+cache-test-orig: $(EXEC)
+	perf stat --repeat 100 \
+		-e cache-misses,cache-references,instructions,cycles \
+		./phonebook_orig
+cache-test-opt: $(EXEC)
+	perf stat --repeat 100 \
+		-e cache-misses,cache-references,instructions,cycles \
+		./phonebook_opt
+
 output.txt: cache-test calculate
 	./calculate
 
