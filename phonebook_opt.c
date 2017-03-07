@@ -6,7 +6,7 @@
 #include "phonebook_opt.h"
 
 /* FILL YOUR OWN IMPLEMENTATION HERE! */
-entry *findName (char lastName[], entry *pHead)
+entry *findName(char lastName[], entry *pHead)
 {
     /* TODO: implement */
 
@@ -18,7 +18,7 @@ entry *findName (char lastName[], entry *pHead)
     return NULL;
 }
 
-entry *append (char lastName[], entry *e)
+entry *append(char lastName[], entry *e)
 {
     e->pNext = (entry *) malloc(sizeof(entry));
     e = e->pNext;
@@ -28,10 +28,10 @@ entry *append (char lastName[], entry *e)
     return e;
 }
 
-entry *attachData (entry *e)
+entry *linkDetailData(entry *e)
 {
     e = e->pNext;
-    e->data = (attach *) malloc(sizeof(attach));
+    e->data = (detail *) malloc(sizeof(detail));
 
     return e;
 }

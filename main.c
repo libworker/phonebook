@@ -63,8 +63,8 @@ int main(int argc, char *argv[])
 
 #ifdef OPT
     e = pHead;
-    while ((e->pNext) != NULL) {
-        e = attachData(e);
+    while (e->pNext) {
+        e = linkDetailData(e);
     }
 #endif
     clock_gettime(CLOCK_REALTIME, &end);

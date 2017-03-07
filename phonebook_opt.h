@@ -7,15 +7,15 @@
  * line to set OPT properly */
 #define OPT 1
 
-typedef struct __ATTACHED_DATA attach;
+typedef struct __DETAIL_DATA detail;
 
 typedef struct __PHONE_BOOK_ENTRY {
     char lastName[MAX_LAST_NAME_SIZE];
     struct __PHONE_BOOK_ENTRY *pNext;
-    attach *data;
+    detail *data;
 } entry;
 
-typedef struct __ATTACHED_DATA {
+typedef struct __DETAIL_DATA {
 
     char firstName[16];
     char email[16];
@@ -27,10 +27,10 @@ typedef struct __ATTACHED_DATA {
     char state[2];
     char zip[5];
 
-} attach;
+} detail;
 
 entry *findName(char lastName[], entry *pHead);
 entry *append(char lastName[], entry *e);
-entry *attachData(entry *e);
+entry *linkDetailData(entry *e);
 
 #endif
